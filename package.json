@@ -1,0 +1,15 @@
+{
+  "name": "chess-v2",
+  "version": "1.2.0",
+  "private": true,
+  "description": "A classical, dependency-free hex chess game with interactive lessons and printable rules.",
+  "type": "module",
+  "engines": {"node": ">=20"},
+  "scripts": {
+    "test": "node --test tests.mjs tests/*.test.mjs",
+    "check": "node scripts/check-site.mjs",
+    "docs": "node scripts/build-guide.mjs",
+    "preview": "node scripts/serve.mjs",
+    "verify": "npm test && npm run check"
+  }
+}

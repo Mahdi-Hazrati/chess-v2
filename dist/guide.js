@@ -1,0 +1,3 @@
+const input=document.querySelector('#guide-search'),sections=[...document.querySelectorAll('.guide-section')];
+input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let count=0;for(const s of sections){s.hidden=!!q&&!s.textContent.toLowerCase().includes(q);if(!s.hidden)count++;}document.querySelector('#search-count').textContent=q?`${count} matching sections`:'';document.querySelector('#no-results').hidden=count!==0;});
+for(const link of document.querySelectorAll('.guide-nav a[href^="#"]'))link.addEventListener('click',()=>{input.value='';for(const s of sections)s.hidden=false;document.querySelector('#search-count').textContent='';document.querySelector('#no-results').hidden=true;});
